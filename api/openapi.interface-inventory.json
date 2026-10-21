@@ -1,0 +1,205 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Hubzam Works — Selected Read Interface Inventory",
+    "version": "2026-10-21-inventory",
+    "description": "Documentation-only inventory of selected observed first-party read interfaces. Not a complete API, third-party access agreement, or stability guarantee. Response schemas intentionally describe only selected fields. Obtain an approved integration contract before use."
+  },
+  "servers": [
+    {
+      "url": "https://example.invalid",
+      "description": "Non-routable placeholder. No production integration host is granted by this inventory."
+    }
+  ],
+  "security": [
+    {
+      "HubzamSession": []
+    }
+  ],
+  "paths": {
+    "/api/v1/auth/me": {
+      "get": {
+        "summary": "Read the authenticated identity",
+        "description": "Observed first-party route. Session and active-account validation apply.",
+        "operationId": "readCurrentIdentity",
+        "responses": {
+          "200": {
+            "description": "Current user representation. Only selected fields are described.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentitySummary"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthRequired"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tenant/bootstrap": {
+      "get": {
+        "summary": "Read available business context",
+        "description": "Observed first-party route. Business context is resolved from the authenticated identity. This inventory does not publish the complete tenant bootstrap schema.",
+        "operationId": "readTenantContext",
+        "responses": {
+          "200": {
+            "description": "Authorized tenant context. Exact representation requires an approved contract."
+          },
+          "401": {
+            "description": "Authentication required."
+          }
+        }
+      }
+    },
+    "/api/v1/entities/{entity}": {
+      "get": {
+        "summary": "List an enabled entity in an authorized company",
+        "description": "Observed first-party route. Entity allowlisting and company access checks apply. This is not a database browser or a published list of internal entities.",
+        "operationId": "listApprovedEntity",
+        "parameters": [
+          {
+            "name": "entity",
+            "in": "path",
+            "required": true,
+            "description": "Entity name explicitly approved for the integration; this inventory intentionally does not enumerate internal entities.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company_id",
+            "in": "query",
+            "required": true,
+            "description": "Authorized business context; not an access credential.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Requested page limit; accepted bounds depend on the approved contract.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Requested page offset; confirm supported pagination behavior.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Approved sort expression; field vocabulary is not specified by this inventory.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Approved records in a data array. Record schemas are deliberately omitted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "empty": {
+                    "value": {
+                      "data": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing or invalid input."
+          },
+          "401": {
+            "description": "Authentication required."
+          },
+          "403": {
+            "description": "Company access denied."
+          },
+          "404": {
+            "description": "Entity not enabled or unavailable."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "HubzamSession": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Approved first-party session token. Do not assume JWT format or use a staff session as a third-party service credential."
+      }
+    },
+    "schemas": {
+      "IdentitySummary": {
+        "type": "object",
+        "description": "Selected non-credential identity fields; not a complete or fixed response schema.",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "role": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "AuthRequired": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "error": "Unauthorized",
+          "code": "AUTH_REQUIRED"
+        }
+      }
+    }
+  }
+}
