@@ -1,0 +1,28 @@
+name: Good first project proposal
+description: Suggest a small, self-contained contributor task using public documents or fictional sandbox data.
+title: "[Good first project]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Only public documentation, synthetic fixtures, and independent code are in scope. Never share private source, credentials, customer data, or sensitive bug details."
+  - type: textarea
+    id: objective
+    attributes:
+      label: What would the contributor build?
+      description: A small concrete output that can be reviewed through a pull request.
+    validations:
+      required: true
+  - type: textarea
+    id: testing
+    attributes:
+      label: How can this be tested without Hubzam Works™ access?
+      description: Use local fictional fixtures and self-contained tests.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Proposed acceptance criteria
+      description: Describe observable behavior and any documentation or license requirements.
+    validations:
+      required: true
