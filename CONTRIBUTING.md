@@ -35,3 +35,7 @@ Use [SECURITY.md](SECURITY.md) for security-sensitive reports.
 Documentation should be accurate, understandable, and specific about limitations. Avoid certification claims, legal promises, version guarantees, implementation details, and provider availability claims that have not been approved and substantiated.
 
 By contributing here, do not assume you have received a license to Hubzam Works application source, brands, customer data, or proprietary technology. See [NOTICE.md](NOTICE.md).
+
+## Independent extension code (proposed)
+
+We are designing a separate pathway for independent plugins and integration prototypes submitted **to this public repository**, without exposing Hubzam Works™ private application code or giving contributors server access. See the [independent developer workflow proposal](docs/12-independent-developer-contributions.md). Until this workflow is approved, implementation examples and proposed manifests must not be described as supported packages or installable integrations. No contribution is automatically deployed or accepted into the product.
