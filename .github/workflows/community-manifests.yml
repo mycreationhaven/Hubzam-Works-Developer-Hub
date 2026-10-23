@@ -1,0 +1,27 @@
+name: Safe community manifest checks
+
+on:
+  pull_request:
+    paths:
+      - "community-extensions/**"
+      - "tools/validate_extensions.py"
+      - ".github/workflows/community-manifests.yml"
+  push:
+    branches: [main]
+    paths:
+      - "community-extensions/**"
+      - "tools/validate_extensions.py"
+      - ".github/workflows/community-manifests.yml"
+permissions:
+  contents: read
+jobs:
+  manifests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out files with no persisted credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate public manifests only (never execute extension code)
+        run: python3 tools/validate_extensions.py
