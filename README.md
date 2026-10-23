@@ -53,3 +53,7 @@ Want to build with other developers **without access to Hubzam Works™ private 
 - [Independently reviewed collaboration workflow](docs/12-independent-developer-contributions.md)
 
 Contributors must never upload secrets, private code, production data, or unlicensed materials. Pull requests cannot deploy changes to Hubzam Works™.
+
+## Local synthetic developer sandbox (proposed)
+
+A [standalone localhost-only simulator](sandbox/README.md) and [sandbox blueprint](docs/15-developer-sandbox-blueprint.md) are under review. These examples provide fictional records and read-only example routes; they are **not** a supported Hubzam Works™ SDK, real API access, extension installer, or live environment. No proprietary code or private integration credentials are required.
