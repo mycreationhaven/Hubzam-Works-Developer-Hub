@@ -1,0 +1,27 @@
+name: Fictional demo feedback
+description: Share usability observations using synthetic examples only.
+title: "[Demo feedback]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Do not post demo passwords, account IDs, session data, real customer information, security vulnerabilities, private URLs, or internal configuration. Report security issues privately through SECURITY.md."
+  - type: textarea
+    id: area
+    attributes:
+      label: Feature or workflow
+      description: Which part of the demo are you discussing?
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Observation
+      description: Describe the experience using only fictional records.
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Suggested improvement
+    validations:
+      required: false
