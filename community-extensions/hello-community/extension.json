@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1-proposal",
+  "id": "hello-community",
+  "name": "Hello Community",
+  "version": "0.1.0",
+  "description": "A standalone greeting demonstration using fictional input",
+  "author": "Hubzam Works Developer Hub example",
+  "license": "MIT",
+  "permissions_requested": [],
+  "external_services": [],
+  "data_handling": "Fictional local input only. No network activity or persistence.",
+  "entrypoint": "src/hello.mjs"
+}

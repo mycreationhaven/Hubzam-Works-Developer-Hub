@@ -1,0 +1,36 @@
+name: Independent extension proposal
+description: Suggest an independently developed extension for review (not an installation request).
+title: "[Extension]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include credentials, live customer data, private application code, exploit details, or internal service URLs. A proposal is not permission to use private APIs."
+  - type: input
+    id: benefit
+    attributes:
+      label: User problem to solve
+      placeholder: What would this help a business or employee do?
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Proposed behavior
+      description: Describe the workflow with synthetic examples.
+    validations:
+      required: true
+  - type: textarea
+    id: permissions
+    attributes:
+      label: Proposed permissions and data
+      description: What minimal data and actions might be necessary? These are not automatically granted.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Independent testing approach
+      description: How could the project be demonstrated without private source, production access, or live customer data?
+    validations:
+      required: true

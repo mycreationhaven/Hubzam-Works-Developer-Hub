@@ -42,3 +42,14 @@ An endpoint being described here does **not** make it an unrestricted third-part
 - Read the [documentation rights notice](NOTICE.md) before redistributing material.
 
 Hubzam Works™ is owned by Hubzam Enterprises, LLC. Product availability and permissions depend on the business, account, and deployed release.
+
+## Community extension collaboration (proposed)
+
+Want to build with other developers **without access to Hubzam Works™ private application code**? We are preparing an independent contribution workspace on this public repository. The proposed workflow includes standalone sample code, synthetic-data tests, public issue and pull-request templates, safe manifest-only validation, and a separate maintainer approval gate. **This is not yet a supported plugin SDK, runtime, marketplace, or deployment pipeline.**
+
+- [Start with the community extension workspace](community-extensions/README.md)
+- [Draft extension submission specification](docs/13-extension-specification.md)
+- [Contributor review and catalog safeguards](docs/14-community-review-and-catalog.md)
+- [Independently reviewed collaboration workflow](docs/12-independent-developer-contributions.md)
+
+Contributors must never upload secrets, private code, production data, or unlicensed materials. Pull requests cannot deploy changes to Hubzam Works™.
