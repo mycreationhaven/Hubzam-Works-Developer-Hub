@@ -15,3 +15,11 @@ The simulator listens on **127.0.0.1:4177** by default and exposes:
 - `GET http://127.0.0.1:4177/v0/catalog/products`
 
 Run local tests with `node --test sandbox/tests/*.test.mjs`. The simulator refuses non-loopback bind hosts; do not expose it to the internet. Request and output sizes are bounded; requests are read-only. There is no real API authorization in this fictional test tool, so never send customer information or live credentials.
+
+## Fictional authorization gateway exercise
+
+See [the gateway simulator limitations](../docs/19-gateway-simulator-limits.md). The separate `gateway.mjs` module demonstrates deny-by-default tenant checks, illustrative permissions, and revocation **using intentionally forgeable synthetic headers**. It is not authentication, and it must never be exposed as a public service or connected to real data.
+
+```bash
+node --test sandbox/tests/gateway.test.mjs
+```
