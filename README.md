@@ -57,3 +57,7 @@ Contributors must never upload secrets, private code, production data, or unlice
 ## Local synthetic developer sandbox (proposed)
 
 A [standalone localhost-only simulator](sandbox/README.md) and [sandbox blueprint](docs/15-developer-sandbox-blueprint.md) are under review. These examples provide fictional records and read-only example routes; they are **not** a supported Hubzam Works™ SDK, real API access, extension installer, or live environment. No proprietary code or private integration credentials are required.
+
+## Future plugin platform safeguards (design proposal)
+
+The Developer Hub includes proposed documents on the [private gateway and tenant-scoped permissions](docs/16-plugin-runtime-security-architecture.md), [independent contributor review and future marketplace policy](docs/17-plugin-contributor-approval-policy.md), and [plugin threat model](docs/18-plugin-threat-model.md). These designs do **not** create live integration permissions, an approved SDK, or an installable marketplace. External contributions cannot deploy themselves or access the private Hubzam Works™ repository.
