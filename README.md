@@ -61,3 +61,7 @@ A [standalone localhost-only simulator](sandbox/README.md) and [sandbox blueprin
 ## Future plugin platform safeguards (design proposal)
 
 The Developer Hub includes proposed documents on the [private gateway and tenant-scoped permissions](docs/16-plugin-runtime-security-architecture.md), [independent contributor review and future marketplace policy](docs/17-plugin-contributor-approval-policy.md), and [plugin threat model](docs/18-plugin-threat-model.md). These designs do **not** create live integration permissions, an approved SDK, or an installable marketplace. External contributions cannot deploy themselves or access the private Hubzam Works™ repository.
+
+## New contributor starting point (proposed)
+
+See the [community developer onboarding guide](docs/20-developer-onboarding.md) for independent beginner-friendly projects and the [fictional read-only gateway contract](docs/21-proposed-plugin-api-contract.md). These examples provide no private source code, live platform access, or deployment permission.
