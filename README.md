@@ -65,3 +65,7 @@ The Developer Hub includes proposed documents on the [private gateway and tenant
 ## New contributor starting point (proposed)
 
 See the [community developer onboarding guide](docs/20-developer-onboarding.md) for independent beginner-friendly projects and the [fictional read-only gateway contract](docs/21-proposed-plugin-api-contract.md). These examples provide no private source code, live platform access, or deployment permission.
+
+## Restricted developer demo access (proposal)
+
+A [restricted demo planning checklist](docs/22-restricted-developer-demo.md) and [fictional-data feedback workflow](docs/23-demo-feedback-and-developer-trial.md) describe how prospective collaborators could eventually try Hubzam Works™ without receiving production access. **No live demo account is available through this repository and no external access should be issued until the checklist has been independently verified.**
