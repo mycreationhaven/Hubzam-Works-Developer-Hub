@@ -1,0 +1,17 @@
+name: Public feature idea
+description: Suggest a workflow or improvement for future consideration.
+title: "[Idea]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: Explain the end-user need without private data.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Proposed user experience
+    validations:
+      required: true
